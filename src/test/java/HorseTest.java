@@ -76,8 +76,8 @@ class HorseTest {
         assertEquals(1, horse1.getDistance());
         assertEquals(0, horse2.getDistance());
     }
-
-    @Test
+    @ParameterizedTest
+    @ValueSource(doubles = {0.2,0.9})
     void move() {
     }
 
