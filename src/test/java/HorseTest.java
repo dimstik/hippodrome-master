@@ -25,6 +25,15 @@ class HorseTest {
         assertThrows(IllegalArgumentException.class,
                 () -> new Horse(s, 1, 1));
     }
+    @ParameterizedTest
+    @ValueSource(strings = {"", " ", "\t", "\n", "\r", "\f"})
+    public void NameCannotBeBlank(String s) {
+        try {
+            new Horse(s, 1, 1);
+        } catch (IllegalArgumentException e) {
+            assertEquals("Name cannot be blank.", e.getMessage());
+        }
+    }
 
     @Test
     void getName() {
