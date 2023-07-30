@@ -80,10 +80,12 @@ class HorseTest {
     }
     @ParameterizedTest
     @ValueSource(doubles = {0.2,0.9})
-    void move() {
+    void move(Double d) {
         try (MockedStatic<Horse> mockedStatic = Mockito.mockStatic(Horse.class)) {
             new Horse("Name", 1, 1).move();
             mockedStatic.verify(() -> Horse.getRandomDouble(0.2,0.9));
+            mockedStatic.when(() -> Horse.getRandomDouble(0.2,0.9)).thenReturn(d);
+            assertEquals(d, Horse.getRandomDouble(0.2,0.9));
         }
     }
 
