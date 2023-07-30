@@ -40,6 +40,8 @@ class HippodromeTest {
         for (int i = 0; i < 30; i++) {
             horses.add(new Horse("" + i, i,i));
         }
+        Hippodrome hippodrome = new Hippodrome(horses);
+        assertEquals(horses, hippodrome.getHorses());
     }
 
     @Test
