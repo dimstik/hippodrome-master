@@ -34,6 +34,11 @@ class HorseTest {
             assertEquals("Name cannot be blank.", e.getMessage());
         }
     }
+    @Test
+    public void negativeSpeed() {
+        assertThrows(IllegalArgumentException.class,
+                () -> new Horse("Вишня",Integer.MIN_VALUE, 1));
+    }
 
     @Test
     void getName() {
