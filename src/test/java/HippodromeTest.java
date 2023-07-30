@@ -8,6 +8,14 @@ class HippodromeTest {
         assertThrows(IllegalArgumentException.class,
                 () -> new Hippodrome(null));
     }
+    @Test
+    public void horsesCannotBeNull() {
+        try {
+            new Hippodrome(null);
+        } catch (IllegalArgumentException e) {
+            assertEquals("Horses cannot be null.", e.getMessage());
+        }
+    }
 
     @Test
     void getHorses() {
