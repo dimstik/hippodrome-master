@@ -23,6 +23,14 @@ class HippodromeTest {
         assertThrows(IllegalArgumentException.class,
                 () -> new Hippodrome(Collections.emptyList()));
     }
+    @Test
+    public void horsesCannotBeEmpty() {
+        try {
+            new Hippodrome(Collections.emptyList());
+        } catch (IllegalArgumentException e) {
+            assertEquals("Horses cannot be empty.", e.getMessage());
+        }
+    }
 
     @Test
     void getHorses() {
