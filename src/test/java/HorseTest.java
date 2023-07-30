@@ -9,6 +9,14 @@ class HorseTest {
                 () -> new Horse(null, 1, 1)
         );
     }
+    @Test
+    public void NameCannotBeNull() {
+        try {
+            new Horse(null, 1,1);
+        } catch (Exception e) {
+            assertEquals("Name cannot be null.", e.getMessage());
+        }
+    }
 
     @Test
     void getName() {
