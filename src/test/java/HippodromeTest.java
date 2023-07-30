@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,6 +47,10 @@ class HippodromeTest {
 
     @Test
     void move() {
+        List<Horse> horses1 = new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            horses1.add(Mockito.mock(Horse.class));
+        }
     }
 
     @Test
