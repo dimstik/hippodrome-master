@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
 
     @Test
+    @Disabled("Тест временно отключен")
     @Timeout(value = 22, unit = TimeUnit.SECONDS)
     void main() {
     }
