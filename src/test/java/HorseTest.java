@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,6 +18,12 @@ class HorseTest {
         } catch (Exception e) {
             assertEquals("Name cannot be null.", e.getMessage());
         }
+    }
+    @ParameterizedTest
+    @ValueSource(strings = {"", " ", "\t", "\n", "\r", "\f"})
+    public void illegalArgumentException(String s) {
+        assertThrows(IllegalArgumentException.class,
+                () -> new Horse(s, 1, 1));
     }
 
     @Test
