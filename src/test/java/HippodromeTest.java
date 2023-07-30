@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class HippodromeTest {
@@ -15,6 +17,11 @@ class HippodromeTest {
         } catch (IllegalArgumentException e) {
             assertEquals("Horses cannot be null.", e.getMessage());
         }
+    }
+    @Test
+    public void isEmptyList() {
+        assertThrows(IllegalArgumentException.class,
+                () -> new Hippodrome(Collections.emptyList()));
     }
 
     @Test
