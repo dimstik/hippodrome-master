@@ -50,6 +50,12 @@ class HorseTest {
         assertThrows(IllegalArgumentException.class,
                 () -> new Horse("Вишня",1, Integer.MIN_VALUE));
     }
+    @Test
+    public void distanceCannotBeNegative() {
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class,
+                () -> new Horse("name", 1, Integer.MIN_VALUE));
+        assertEquals("Distance cannot be negative.", e.getMessage());
+    }
 
     @Test
     void getName() {
