@@ -54,6 +54,10 @@ class HippodromeTest {
         Hippodrome hippodrome = new Hippodrome(horses1);
 
         hippodrome.move();
+
+        for (Horse horse: horses1) {
+            Mockito.verify(horse).move();
+        }
     }
 
     @Test
