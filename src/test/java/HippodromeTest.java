@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,6 +36,10 @@ class HippodromeTest {
 
     @Test
     void getHorses() {
+        List<Horse> horses = new ArrayList<>();
+        for (int i = 0; i < 30; i++) {
+            horses.add(new Horse("" + i, i,i));
+        }
     }
 
     @Test
