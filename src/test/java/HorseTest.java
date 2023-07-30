@@ -71,6 +71,9 @@ class HorseTest {
 
     @Test
     void getDistance() {
+        Horse horse1 = new Horse("Name", 1, 1);
+        Horse horse2 = new Horse("Name", 2);
+        assertEquals(1, horse1.getDistance());
     }
 
     @Test
