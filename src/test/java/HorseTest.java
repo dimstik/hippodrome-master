@@ -45,6 +45,11 @@ class HorseTest {
                 () -> new Horse("name", Integer.MIN_VALUE, 1));
         assertEquals("Speed cannot be negative.", e.getMessage());
     }
+    @Test
+    public void negativeDistance() {
+        assertThrows(IllegalArgumentException.class,
+                () -> new Horse("Вишня",1, Integer.MIN_VALUE));
+    }
 
     @Test
     void getName() {
