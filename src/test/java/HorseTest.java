@@ -88,8 +88,4 @@ class HorseTest {
             assertEquals(d, Horse.getRandomDouble(0.2,0.9));
         }
     }
-
-    @Test
-    void getRandomDouble() {
-    }
 }
