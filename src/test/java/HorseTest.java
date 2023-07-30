@@ -65,6 +65,8 @@ class HorseTest {
 
     @Test
     void getSpeed() {
+        Horse horse1 = new Horse("Name", 1, 1);
+        assertEquals(1, horse1.getSpeed());
     }
 
     @Test
