@@ -51,6 +51,9 @@ class HippodromeTest {
         for (int i = 0; i < 50; i++) {
             horses1.add(Mockito.mock(Horse.class));
         }
+        Hippodrome hippodrome = new Hippodrome(horses1);
+
+        hippodrome.move();
     }
 
     @Test
