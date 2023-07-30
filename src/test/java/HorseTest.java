@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -79,6 +81,10 @@ class HorseTest {
     @ParameterizedTest
     @ValueSource(doubles = {0.2,0.9})
     void move() {
+        try (MockedStatic<Horse> mockedStatic = Mockito.mockStatic(Horse.class)) {
+            new Horse("Name", 1, 1).move();
+            mockedStatic.verify(() -> Horse.getRandomDouble(0.2,0.9));
+        }
     }
 
     @Test
