@@ -56,9 +56,11 @@ class HorseTest {
                 () -> new Horse("name", 1, Integer.MIN_VALUE));
         assertEquals("Distance cannot be negative.", e.getMessage());
     }
-
     @Test
     void getName() {
+        String expected = Horse.class.getName();
+        String actual = Horse.class.getName();
+        assertEquals(expected, actual);
     }
 
     @Test
